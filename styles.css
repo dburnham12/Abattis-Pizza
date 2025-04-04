@@ -1,7 +1,7 @@
 /* 
 Dylan Burnham
 COMP 205
-Assignment 2 
+Assignment 3
 */
 
 :root {
@@ -206,16 +206,17 @@ table {
     border-radius: 0.5rem;
 }
 
-#submit-button-container {
+#button-container {
     display: flex;
     justify-content: center;
+    gap: 1rem;
     padding: 1rem;
     border: 1px solid black;
     border-radius: 1rem;
     background-color: #ffcd89;
 }
 
-#order-submit-button {
+button {
     background-color: var(--orange);
     padding: 1rem 2rem;
     border-radius: 1rem;
@@ -223,15 +224,15 @@ table {
     font-weight: bold;
 }
 
-#order-submit-button i {
+button i {
     font-size: 1.2rem;
 }
 
-#order-submit-button:hover {
+button:hover {
     background-color: #ffb52c;
 }
 
-#order-submit-button:active {
+button:active {
     background-color: var(--orange);
     box-shadow: inset 2px 2px 2px #00000030;
 }
