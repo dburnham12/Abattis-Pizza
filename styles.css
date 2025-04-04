@@ -191,7 +191,7 @@ table {
     background-color: #fdc48b;
 }
 
-#order-name-input {
+#order-string-input {
     border: 1px solid black;
     margin-bottom: 0.5rem;
     padding: 1rem;
@@ -199,11 +199,21 @@ table {
     background-color: #fdcd8b;
 }
 
-#order-name-field {
+#order-name-field,
+#order-phone-field {
     margin-bottom: 0.5rem;
     height: 1.2rem;
     width: 100%;
     border-radius: 0.5rem;
+}
+
+#order-warning {
+    display: none;
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: lightyellow;
 }
 
 #button-container {

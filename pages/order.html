@@ -11,7 +11,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
-        <script type="text/javascript" src="../script.js" async></script>
+        <script type="text/javascript" src="../scripts/order.js" async></script>
         <title>Abattis Pizza - Order</title>
     </head>
     <body>
@@ -86,9 +86,17 @@
                             </div>
                         </fieldset>
                     </div>
-                    <div id="order-name-input">
-                        <label class="form-label" for="order-name-field">Order Name</label>
-                        <input type="text" id="order-name-field" />
+
+                    <div id="order-string-input">
+                        <label class="form-label" for="order-name-field">Name</label>
+                        <input type="text" id="order-name-field" required />
+
+                        <label class="form-label" for="order-phone-field">Phone Number</label>
+                        <input type="text" id="order-phone-field" required />
+                    </div>
+                    <div id="order-warning">
+                        <h4>Warning there is a problem with these fields:</h4>
+                        <ul id="order-warning-list"></ul>
                     </div>
                     <div id="button-container">
                         <button id="order-submit-button" type="submit" value="Submit">
