@@ -1,0 +1,249 @@
+/* 
+Dylan Burnham
+COMP 205
+Assignment 2 
+*/
+
+:root {
+    --orange: #ffa500;
+    --lightorange: #ffdbbb;
+    --lightblue: #f0f8ff;
+    --darkblue: #00008b;
+    --darkbluehover: #0000c3;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+}
+
+body {
+    margin: 115px 0 0 0;
+    min-height: calc(100vh - 195px);
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    background-color: var(--lightblue);
+}
+
+h1 {
+    font-family: Script MT, Brush Script Std, cursive;
+    margin: 0.5rem;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+h2 {
+    background-color: var(--orange);
+    text-align: center;
+    padding: 1rem 0.5rem;
+    margin: 0;
+    border-bottom: 2px solid black;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+header {
+    text-align: center;
+    background-color: var(--orange);
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 2px solid black;
+    height: 115px;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--darkblue);
+}
+
+header a:hover {
+    color: var(--darkbluehover);
+}
+
+footer {
+    padding: 0 1rem;
+    position: absolute;
+    bottom: -80px;
+    right: 0;
+    left: 0;
+    background-color: var(--orange);
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid black;
+    text-align: center;
+}
+
+footer h4,
+footer h5 {
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.advertisement-container {
+    display: flex;
+    background-color: var(--lightorange);
+    margin-bottom: 1rem;
+}
+
+.advertisement-container img {
+    height: auto;
+    width: 40%;
+    object-fit: cover;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.advertisement-content {
+    padding: 0 1rem;
+}
+
+.content-container {
+    background-color: var(--lightorange);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.content-container h4 {
+    margin: 0.5rem 0;
+}
+
+.content-container h4 span {
+    font-weight: normal;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: start;
+    padding: 0.5rem;
+}
+
+table {
+    width: 100%;
+}
+
+/* Order Page Specific Styles*/
+#form-content-container {
+    background-color: var(--lightorange);
+    padding: 1rem;
+}
+
+#pizza-type-select {
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #f8bb8f;
+}
+
+#pizza-select {
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin: 0 0.5rem;
+    width: 10rem;
+}
+
+#build-your-own-selection {
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #f8b48f;
+}
+
+#crust-type-selection {
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #fdc48b;
+}
+
+#order-name-input {
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #fdcd8b;
+}
+
+#order-name-field {
+    margin-bottom: 0.5rem;
+    height: 1.2rem;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+#submit-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: #ffcd89;
+}
+
+#order-submit-button {
+    background-color: var(--orange);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: inset -2px -2px 2px #00000030;
+    font-weight: bold;
+}
+
+#order-submit-button i {
+    font-size: 1.2rem;
+}
+
+#order-submit-button:hover {
+    background-color: #ffb52c;
+}
+
+#order-submit-button:active {
+    background-color: var(--orange);
+    box-shadow: inset 2px 2px 2px #00000030;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 700px) {
+    .advertisement-container {
+        flex-direction: column;
+    }
+
+    .advertisement-container img {
+        width: 100%;
+        height: 300px;
+    }
+}

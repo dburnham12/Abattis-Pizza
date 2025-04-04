@@ -1,0 +1,106 @@
+<!-- Dylan Burnham -->
+<!-- COMP 205 -->
+<!-- Assignment 2 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <script type="text/javascript" src="../script.js" async></script>
+        <title>Abattis Pizza - Order</title>
+    </head>
+    <body>
+        <header>
+            <h1>Abattis Pizza - The best pizza in Kingston guarenteed</h1>
+            <a href="../index.html">Home Page</a>
+        </header>
+        <main>
+            <form>
+                <h2>Pizza Order Form</h2>
+                <div id="form-content-container">
+                    <div id="pizza-type-select">
+                        <label class="form-label" for="pizza-select">Pizza Type:</label>
+                        <select id="pizza-select" name="pizza">
+                            <option value="veggie">Vegetarian</option>
+                            <option value="canadian">Canadian</option>
+                            <option value="pepperoni">Pepperoni</option>
+                            <option value="hawaiian">Hawaiian</option>
+                            <option vlaue="margherita">Margherita</option>
+                            <option value="meat">Meat</option>
+                            <option value="cheese">Cheese</option>
+                            <option value="build">Build Your Own</option>
+                        </select>
+                    </div>
+                    <div id="build-your-own-selection">
+                        <fieldset id="build-your-own">
+                            <legend>Build Your Own:</legend>
+                            <div>
+                                <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni" />
+                                <label for="pepperoni">Pepperoni</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms" />
+                                <label for="mushrooms">Mushrooms</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="green-pepper" name="toppings" value="green-pepper" />
+                                <label for="green-pepper">Green Pepper</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="onion" name="toppings" value="onion" />
+                                <label for="onion">Onion</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="anchovies" name="toppings" value="anchovies" />
+                                <label for="anchovies">Anchovies</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="steak" name="toppings" value="steak" />
+                                <label for="steak">Steak</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="chicken" name="toppings" value="chicken" />
+                                <label for="chicken">Chicken</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div id="crust-type-selection">
+                        <fieldset>
+                            <legend>Crust Type:</legend>
+                            <div>
+                                <input type="radio" id="thin" name="crust" value="thin" checked />
+                                <label for="thin">Thin Crust</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="regular" name="crust" value="regular" />
+                                <label for="regular">Regular Crust</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="thick" name="crust" value="thick" />
+                                <label for="thick">Thick Crust</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div id="order-name-input">
+                        <label class="form-label" for="order-name-field">Order Name</label>
+                        <input type="text" id="order-name-field" />
+                    </div>
+                    <div id="submit-button-container">
+                        <button id="order-submit-button" type="submit" value="Submit">
+                            <i class="fa fa-send-o"></i> Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <h4>@Copyright - Abattis Pizza LTD.</h4>
+            <h5>All resources on this webite are property of Abattis Pizza, any other use is prohibited</h5>
+        </footer>
+    </body>
+</html>
