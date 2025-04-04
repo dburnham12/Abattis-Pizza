@@ -20,8 +20,6 @@ let orderWarningList = document.getElementById("order-warning-list");
 let clearButton = document.getElementById("order-clear-button");
 let submitButton = document.getElementById("order-submit-button");
 
-buildMenu.style.display = "none";
-
 pizzaSelect.addEventListener("change", () => {
     if (pizzaSelect.value === "build") {
         buildMenu.style.display = "block";
@@ -54,11 +52,12 @@ submitButton.addEventListener("click", (event) => {
     let nameRegex = /[A-Za-z\s]+$/g;
     let phoneRegex = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
 
-    // Clear out all of
+    // Clear out all of the previous warning messages if they exist
     while (orderWarningList.lastElementChild) {
         orderWarningList.removeChild(orderWarningList.lastElementChild);
     }
 
+    // Check conditions and populate warning fields if necessary
     if (!nameRegex.test(orderName.value)) {
         errorsFound = true;
         const li = document.createElement("li");
@@ -71,6 +70,8 @@ submitButton.addEventListener("click", (event) => {
         li.innerHTML = "Phone number must only contain numbers and be of the format ###-###-####";
         orderWarningList.appendChild(li);
     }
+
+    // Display warning field if necessary
     if (errorsFound) {
         warningField.style.display = "block";
         event.preventDefault();

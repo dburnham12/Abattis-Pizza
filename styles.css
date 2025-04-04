@@ -176,6 +176,7 @@ table {
 }
 
 #build-your-own-selection {
+    display: none;
     border: 1px solid black;
     margin-bottom: 0.5rem;
     padding: 1rem;
