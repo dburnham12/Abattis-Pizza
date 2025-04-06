@@ -22,6 +22,11 @@ let clearButton = document.getElementById("order-clear-button");
 let submitButton = document.getElementById("order-submit-button");
 let backToTopButton = document.getElementById("back-to-top-button");
 
+// Upsell Modal
+let upsellModal = document.getElementById("upsell-modal");
+let upsellAddTopping = document.getElementById("upsell-add-topping");
+let upsellAddSoda = document.getElementById("upsell-add-soda");
+
 let orderForm = document.getElementById("order-form");
 
 pizzaSelect.addEventListener("change", () => {
@@ -46,18 +51,24 @@ clearButton.addEventListener("click", (event) => {
 submitButton.addEventListener("click", (event) => {
     let errorsFound = false;
     let sodaChecked = false;
+    let toppingsChecked = false;
+    let displayUpsell = false;
     let nameRegex = /[A-Za-z\s]+$/g;
     let phoneRegex = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
+
+    toppingCheckBoxes.forEach((checkbox) => {
+        if (checkbox.checked) toppingsChecked = true;
+    });
+
+    sodaOptions.forEach((soda) => {
+        if (soda.checked) sodaChecked = true;
+    });
 
     // ---- Warning Messages ----
     // Clear out all of the previous warning messages if they exist
     while (orderWarningList.lastElementChild) {
         orderWarningList.removeChild(orderWarningList.lastElementChild);
     }
-
-    sodaOptions.forEach((soda) => {
-        if (soda.checked) sodaChecked = true;
-    });
 
     // Check conditions and populate warning fields if necessary
     if (sodaChecked && sodaQuantity.value === "0") {
@@ -75,7 +86,7 @@ submitButton.addEventListener("click", (event) => {
     if (!nameRegex.test(orderName.value)) {
         errorsFound = true;
         const li = document.createElement("li");
-        li.innerHTML = "Name: Must only contain letters and spaces";
+        li.innerHTML = "Name: Must not be empty and only contain letters and spaces";
         orderWarningList.appendChild(li);
     }
     if (!phoneRegex.test(orderPhone.value)) {
@@ -85,11 +96,31 @@ submitButton.addEventListener("click", (event) => {
         orderWarningList.appendChild(li);
     }
 
+    // ---- Upsell Options ----
+    if (!toppingsChecked && pizzaSelect.value === "build") {
+        displayUpsell = true;
+    } else {
+        upsellAddTopping.style.display = "none";
+    }
+
+    if (!sodaChecked) {
+        displayUpsell = true;
+    } else {
+        upsellAddSoda.style.display = "none";
+    }
+
+    if (displayUpsell && !errorsFound) {
+        upsellModal.style.display = "block";
+    }
+
     // Display warning field if necessary
     if (errorsFound) {
         warningField.style.display = "block";
-        event.preventDefault();
+    } else {
+        warningField.style.display = "none";
     }
+
+    if (errorsFound || displayUpsell) event.preventDefault();
 });
 
 // Scroll back to top when button is pressed

@@ -27,6 +27,15 @@ body {
     background-color: var(--lightblue);
 }
 
+.hide-scrollbar {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar ::-webkit-scrollbar {
+    display: none;
+}
+
 h1 {
     font-family: Script MT, Brush Script Std, cursive;
     margin: 0.5rem;
@@ -245,6 +254,27 @@ table {
     background-color: #ffcd89;
 }
 
+button {
+    background-color: var(--orange);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: inset -2px -2px 2px #00000030;
+    font-weight: bold;
+}
+
+button i {
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: #ffb52c;
+}
+
+button:active {
+    background-color: var(--orange);
+    box-shadow: inset 2px 2px 2px #00000030;
+}
+
 #upsell-modal {
     display: none;
 }
@@ -293,27 +323,6 @@ table {
 
 .upsell-section-text p {
     margin: 0.75rem 0.25rem;
-}
-
-button {
-    background-color: var(--orange);
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    box-shadow: inset -2px -2px 2px #00000030;
-    font-weight: bold;
-}
-
-button i {
-    font-size: 1.2rem;
-}
-
-button:hover {
-    background-color: #ffb52c;
-}
-
-button:active {
-    background-color: var(--orange);
-    box-shadow: inset 2px 2px 2px #00000030;
 }
 
 /* Media Queries */
