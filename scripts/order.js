@@ -10,7 +10,8 @@ let buildMenu = document.getElementById("build-your-own-selection");
 let orderName = document.getElementById("order-name-field");
 let orderPhone = document.getElementById("order-phone-field");
 let toppingCheckBoxes = document.getElementsByName("toppings");
-let crustSelection = document.getElementsByName("crust");
+let sodaQuantity = document.getElementById("soda-count");
+let sodaOptions = document.getElementsByName("soda");
 
 // Order warning field
 let warningField = document.getElementById("order-warning");
@@ -19,6 +20,9 @@ let orderWarningList = document.getElementById("order-warning-list");
 // Form Buttons
 let clearButton = document.getElementById("order-clear-button");
 let submitButton = document.getElementById("order-submit-button");
+let backToTopButton = document.getElementById("back-to-top-button");
+
+let orderForm = document.getElementById("order-form");
 
 pizzaSelect.addEventListener("change", () => {
     if (pizzaSelect.value === "build") {
@@ -32,42 +36,52 @@ pizzaSelect.addEventListener("change", () => {
 clearButton.addEventListener("click", (event) => {
     event.preventDefault();
 
-    pizzaSelect.selectedIndex = 0;
+    orderForm.reset();
+
     buildMenu.style.display = "none";
-    toppingCheckBoxes.forEach((checkbox) => {
-        checkbox.checked = false;
-    });
-    crustSelection[0].checked = true;
-
-    // Clear out form string fields
-    orderName.value = "";
-    orderPhone.value = "";
-
     warningField.style.display = "none";
 });
 
 // Event listener to display issues with form if there are any
 submitButton.addEventListener("click", (event) => {
     let errorsFound = false;
+    let sodaChecked = false;
     let nameRegex = /[A-Za-z\s]+$/g;
     let phoneRegex = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
 
+    // ---- Warning Messages ----
     // Clear out all of the previous warning messages if they exist
     while (orderWarningList.lastElementChild) {
         orderWarningList.removeChild(orderWarningList.lastElementChild);
     }
 
+    sodaOptions.forEach((soda) => {
+        if (soda.checked) sodaChecked = true;
+    });
+
     // Check conditions and populate warning fields if necessary
+    if (sodaChecked && sodaQuantity.value === "0") {
+        errorsFound = true;
+        const li = document.createElement("li");
+        li.innerHTML = "Sodas: You selected a soda but didn't select a quantity";
+        orderWarningList.appendChild(li);
+    } else if (!sodaChecked && sodaQuantity.value !== "0") {
+        errorsFound = true;
+        const li = document.createElement("li");
+        li.innerHTML = "Sodas: You selected a soda quantity but didn't select your type of soda";
+        orderWarningList.appendChild(li);
+    }
+
     if (!nameRegex.test(orderName.value)) {
         errorsFound = true;
         const li = document.createElement("li");
-        li.innerHTML = "Name must only contain letters and spaces";
+        li.innerHTML = "Name: Must only contain letters and spaces";
         orderWarningList.appendChild(li);
     }
     if (!phoneRegex.test(orderPhone.value)) {
         errorsFound = true;
         const li = document.createElement("li");
-        li.innerHTML = "Phone number must only contain numbers and be of the format ###-###-####";
+        li.innerHTML = "Phone Number: Must only contain numbers and be of the format ###-###-####";
         orderWarningList.appendChild(li);
     }
 
@@ -76,4 +90,10 @@ submitButton.addEventListener("click", (event) => {
         warningField.style.display = "block";
         event.preventDefault();
     }
+});
+
+// Scroll back to top when button is pressed
+backToTopButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo(0, 0);
 });

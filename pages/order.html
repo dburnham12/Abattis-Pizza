@@ -20,7 +20,7 @@
             <a href="../index.html">Home Page</a>
         </header>
         <main>
-            <form>
+            <form id="order-form">
                 <h2>Pizza Order Form</h2>
                 <div id="form-content-container">
                     <div id="pizza-type-select">
@@ -86,7 +86,27 @@
                             </div>
                         </fieldset>
                     </div>
-
+                    <div id="soda-selection">
+                        <fieldset>
+                            <legend>Sodas:</legend>
+                            <div id="number-select">
+                                <label for="soda-count">Quantity</label>
+                                <input type="number" id="soda-count" name="soda-count" min="0" max="8" value="0" />
+                            </div>
+                            <div>
+                                <input type="checkbox" id="coke" name="soda" value="coke" />
+                                <label for="coke">Coca Cola</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="pepsi" name="soda" value="pepsi" />
+                                <label for="pepsi">Pepsi</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="sprite" name="soda" value="sprite" />
+                                <label for="spite">Sprite</label>
+                            </div>
+                        </fieldset>
+                    </div>
                     <div id="order-string-input">
                         <label class="form-label" for="order-name-field">Name</label>
                         <input type="text" id="order-name-field" required />
@@ -98,11 +118,50 @@
                         <h4>Warning there is a problem with these fields:</h4>
                         <ul id="order-warning-list"></ul>
                     </div>
-                    <div id="button-container">
+                    <div class="button-container">
                         <button id="order-submit-button" type="submit" value="Submit">
-                            <i class="fa fa-send-o"></i> Submit
+                            <i class="fa fa-send-o"></i> Place Order
                         </button>
                         <button id="order-clear-button">Clear Order</button>
+                        <button id="back-to-top-button">Back To Top</button>
+                    </div>
+                </div>
+                <div id="upsell-modal">
+                    <div id="modal-background"></div>
+                    <div id="modal">
+                        <h2>Are you sure?</h2>
+                        <div id="modal-content">
+                            <div id="upsell-add-topping" class="upsell-section">
+                                <img src="../images/pepperoni.jpg" alt="Sliced pepperoni" />
+                                <div class="upsell-section-text">
+                                    <p>
+                                        You haven't added any toppings. Would you like to add pepperoni to your pizza?
+                                    </p>
+                                    <input
+                                        type="checkbox"
+                                        id="upsell-pepperoni"
+                                        name="upsell-toppings"
+                                        value="pepperoni"
+                                    />
+                                    <label for="upsell-pepperoni">Yes Please!</label>
+                                </div>
+                            </div>
+                            <div id="upsell-add-soda" class="upsell-section">
+                                <img src="../images/soda.jpg" alt="Two soda cans" />
+                                <div class="upsell-section-text">
+                                    <p>
+                                        You haven't selected any drinks would you like to add 2 cans of Coca-Cola to
+                                        your order?
+                                    </p>
+                                    <input type="checkbox" id="upsell-soda" name="upsell-soda" value="coke" />
+                                    <label for="upsell-soda">Yes Please!</label>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button>Place Order</button>
+                                <button>Add More Items</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

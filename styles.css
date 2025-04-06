@@ -103,6 +103,7 @@ footer h5 {
     max-width: 100%;
 }
 
+/* Index Page Specfic Styles */
 .advertisement-container {
     display: flex;
     background-color: var(--lightorange);
@@ -192,6 +193,23 @@ table {
     background-color: #fdc48b;
 }
 
+#soda-selection {
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #fdc48b;
+}
+
+#number-select {
+    margin: 0.25rem 0.25rem 0.5rem 0.25rem;
+}
+
+#number-select input {
+    height: 1.5rem;
+    border-radius: 0.5rem;
+}
+
 #order-string-input {
     border: 1px solid black;
     margin-bottom: 0.5rem;
@@ -217,7 +235,7 @@ table {
     background-color: lightyellow;
 }
 
-#button-container {
+.button-container {
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -225,6 +243,56 @@ table {
     border: 1px solid black;
     border-radius: 1rem;
     background-color: #ffcd89;
+}
+
+#upsell-modal {
+    display: none;
+}
+
+#modal-background {
+    position: fixed;
+    z-index: 1001;
+    background-color: #00000030;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#modal {
+    background-color: var(--lightorange);
+    z-index: 1002;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#modal-content {
+    padding: 1rem;
+}
+
+.upsell-section {
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+}
+
+.upsell-section img {
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 1rem 0 0 1rem;
+    vertical-align: bottom;
+}
+
+.upsell-section-text {
+    padding: 0 0.5rem;
+}
+
+.upsell-section-text p {
+    margin: 0.75rem 0.25rem;
 }
 
 button {
