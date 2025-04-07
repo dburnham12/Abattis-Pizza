@@ -170,19 +170,25 @@ table {
     padding: 1rem;
 }
 
+select {
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin: 0 0.5rem;
+    width: 10rem;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
 #pizza-type-select {
     border: 1px solid black;
     margin-bottom: 0.5rem;
     padding: 1rem;
     border-radius: 1rem;
     background-color: #f8bb8f;
-}
-
-#pizza-select {
-    height: 2rem;
-    border-radius: 0.5rem;
-    margin: 0 0.5rem;
-    width: 10rem;
 }
 
 #build-your-own-selection {
@@ -210,11 +216,15 @@ table {
     background-color: #fdc48b;
 }
 
-#number-select {
-    margin: 0.25rem 0.25rem 0.5rem 0.25rem;
+#wing-selection {
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #fdc48b;
 }
 
-#number-select input {
+.number-select {
     height: 1.5rem;
     border-radius: 0.5rem;
 }

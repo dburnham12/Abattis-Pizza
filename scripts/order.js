@@ -12,6 +12,7 @@ let orderPhone = document.getElementById("order-phone-field");
 let toppingCheckBoxes = document.getElementsByName("toppings");
 let sodaQuantity = document.getElementById("soda-count");
 let sodaOptions = document.getElementsByName("soda");
+let wingQuantity = document.getElementById("wing-count");
 
 // Order warning field
 let warningField = document.getElementById("order-warning");
@@ -26,6 +27,7 @@ let backToTopButton = document.getElementById("back-to-top-button");
 let upsellModal = document.getElementById("upsell-modal");
 let upsellAddTopping = document.getElementById("upsell-add-topping");
 let upsellAddSoda = document.getElementById("upsell-add-soda");
+let upsellAddWings = document.getElementById("upsell-add-wings");
 
 let orderForm = document.getElementById("order-form");
 
@@ -101,6 +103,12 @@ submitButton.addEventListener("click", (event) => {
         displayUpsell = true;
     } else {
         upsellAddTopping.style.display = "none";
+    }
+
+    if (wingQuantity.value === "0") {
+        displayUpsell = true;
+    } else {
+        upsellAddWings.style.display = "none";
     }
 
     if (!sodaChecked) {
