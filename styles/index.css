@@ -1,0 +1,69 @@
+/* 
+Dylan Burnham
+COMP 205
+Assignment 3
+*/
+
+/* Index Page Specfic Styles */
+.advertisement-container {
+    display: flex;
+    background-color: var(--lightorange);
+    margin-bottom: 1rem;
+}
+
+.advertisement-container img {
+    height: auto;
+    width: 40%;
+    object-fit: cover;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.advertisement-content {
+    padding: 0 1rem;
+}
+
+.content-container {
+    background-color: var(--lightorange);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.content-container h4 {
+    margin: 0.5rem 0;
+}
+
+.content-container h4 span {
+    font-weight: normal;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: start;
+    padding: 0.5rem;
+}
+
+table {
+    width: 100%;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 700px) {
+    .advertisement-container {
+        flex-direction: column;
+    }
+
+    .advertisement-container img {
+        width: 100%;
+        height: 300px;
+    }
+}
