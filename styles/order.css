@@ -104,27 +104,6 @@ fieldset {
     background-color: #ffcd89;
 }
 
-button {
-    background-color: var(--orange);
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    box-shadow: inset -2px -2px 2px #00000030;
-    font-weight: bold;
-}
-
-button i {
-    font-size: 1.2rem;
-}
-
-button:hover {
-    background-color: #ffb52c;
-}
-
-button:active {
-    background-color: var(--orange);
-    box-shadow: inset 2px 2px 2px #00000030;
-}
-
 #upsell-modal {
     display: none;
 }

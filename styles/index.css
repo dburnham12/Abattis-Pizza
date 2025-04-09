@@ -36,6 +36,48 @@ Assignment 3
     font-weight: normal;
 }
 
+.review-container {
+    border: 2px solid black;
+    padding: 1rem;
+    display: flex;
+}
+
+.review-content {
+    padding: 0 1rem;
+}
+
+.review-profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid black;
+    padding-right: 1rem;
+    min-width: 15rem;
+}
+
+.review-profile-info h4 {
+    text-decoration: underline;
+}
+
+.review-profile-info img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border: 2px solid black;
+}
+
+#review-accordian {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.button-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
 table,
 th,
 td {
