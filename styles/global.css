@@ -76,6 +76,7 @@ header {
     left: 0;
     border-bottom: 2px solid black;
     height: 115px;
+    z-index: 1000;
 }
 
 header a {
