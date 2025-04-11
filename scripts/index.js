@@ -8,7 +8,6 @@ let gameOverScreen = document.getElementById("game-lost-overlay");
 let gameWonSection = document.getElementById("game-won-section");
 let gameTimer = document.getElementById("game-timer");
 
-let gameStart = false;
 let gameBoardInfo;
 let clickCount = 0;
 let checkedTileIndex;
@@ -28,28 +27,21 @@ orderAccordianButton.addEventListener("click", () => {
 });
 
 gameStartButton.addEventListener("click", (event) => {
-    gameStart = true;
     gameStartOverlay.style.display = "none";
 
-    // Set up the game boards info
-    gameBoardInfo = [
-        { image: "images/pizza.jpg", alt: "A pepperoni pizza", found: false },
+    let gameBoardSetup = [
         { image: "images/pizza.jpg", alt: "A pepperoni pizza", found: false },
         { image: "images/soda.jpg", alt: "Two soda cans", found: false },
-        { image: "images/soda.jpg", alt: "Two soda cans", found: false },
-        { image: "images/pepperoni.jpg", alt: "Sliced pepperoni", found: false },
         { image: "images/pepperoni.jpg", alt: "Sliced pepperoni", found: false },
         { image: "images/chickenwings.jpg", alt: "A plate with 6 wings", found: false },
-        { image: "images/chickenwings.jpg", alt: "A plate with 6 wings", found: false },
-        { image: "images/steakBits.jpg", alt: "A bowl of steak bits", found: false },
         { image: "images/steakBits.jpg", alt: "A bowl of steak bits", found: false },
         { image: "images/shreddedChicken.jpg", alt: "A bowl of shredded chicken", found: false },
-        { image: "images/shreddedChicken.jpg", alt: "A bowl of shredded chicken", found: false },
         { image: "images/friedMushrooms.jpg", alt: "A bowl of fried mushrooms", found: false },
-        { image: "images/friedMushrooms.jpg", alt: "A bowl of fried mushrooms", found: false },
-        { image: "images/greenPepper.jpg", alt: "Sliced green pepper", found: false },
         { image: "images/greenPepper.jpg", alt: "Sliced green pepper", found: false },
     ];
+
+    // Set up the game boards info
+    gameBoardInfo = [...gameBoardSetup, ...gameBoardSetup];
 
     // Shuffle the board so that it is not the same every time
     for (let i = 0; i < gameBoardInfo.length; i++) {
@@ -67,13 +59,14 @@ gameStartButton.addEventListener("click", (event) => {
         }
     }
 
+    // Update the game timer
     gameSeconds = 45;
-    gameTimer.innerHTML = "" + gameSeconds;
+    gameTimer.innerHTML = "" + gameSeconds + "s";
     timer = setInterval(function () {
         gameSeconds--;
         gameTimer.innerHTML = "" + gameSeconds + "s";
         if (gameSeconds <= 0) {
-            gameStart = false;
+            clickCount = 0;
             reloadGame = true;
             gameStartButton.innerHTML = "Retry";
             gameStartOverlay.style.display = "flex";
@@ -84,7 +77,7 @@ gameStartButton.addEventListener("click", (event) => {
 
 for (let i = 0; i < gameTiles.length; i++) {
     gameTiles[i].addEventListener("click", () => {
-        if (canClick) {
+        if (canClick && !gameBoardInfo[i].found) {
             gameTiles[i].src = gameBoardInfo[i].image;
             gameTiles[i].alt = gameBoardInfo[i].alt;
 
@@ -92,7 +85,7 @@ for (let i = 0; i < gameTiles.length; i++) {
             if (clickCount == 0) {
                 clickCount++;
                 checkedTileIndex = i;
-            } else {
+            } else if (i !== checkedTileIndex) {
                 // If we have a tile to match with
                 clickCount = 0;
                 // if the tile is not a match

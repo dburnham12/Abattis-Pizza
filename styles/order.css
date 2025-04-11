@@ -13,7 +13,6 @@ Assignment 3
 select {
     height: 2rem;
     border-radius: 0.5rem;
-    margin: 0 0.5rem;
     width: 10rem;
 }
 
@@ -21,6 +20,12 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 5rem;
+    margin-right: 0.5rem;
 }
 
 #pizza-type-select {
@@ -78,20 +83,12 @@ fieldset {
 }
 
 #order-name-field,
-#order-phone-field {
+#order-phone-field,
+#discount-code-field {
     margin-bottom: 0.5rem;
     height: 1.2rem;
     width: 100%;
     border-radius: 0.5rem;
-}
-
-#order-warning {
-    display: none;
-    border: 1px solid black;
-    margin-bottom: 0.5rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    background-color: lightyellow;
 }
 
 .button-container {
@@ -102,6 +99,30 @@ fieldset {
     border: 1px solid black;
     border-radius: 1rem;
     background-color: #ffcd89;
+}
+
+.warning-message {
+    background-color: lightyellow;
+    border: 1px solid yellow;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    display: none;
+}
+
+#soda-checked-warning,
+#soda-quantity-warning,
+#wing-warning {
+    margin-top: 1rem;
+}
+
+#name-warning,
+#phone-number-warning {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#order-general-warning {
+    margin-bottom: 1rem;
 }
 
 #upsell-modal {

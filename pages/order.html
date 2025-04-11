@@ -91,7 +91,7 @@
                         <fieldset>
                             <legend>Sodas:</legend>
                             <div>
-                                <label for="soda-count">Quantity: </label>
+                                <label for="soda-count" class="form-label">Quantity: </label>
                                 <input
                                     type="number"
                                     class="number-select"
@@ -112,15 +112,21 @@
                             </div>
                             <div>
                                 <input type="checkbox" id="sprite" name="soda" value="sprite" />
-                                <label for="spite">Sprite</label>
+                                <label for="sprite">Sprite</label>
                             </div>
                         </fieldset>
+                        <div id="soda-quantity-warning" class="warning-message">
+                            <p>Sodas: You selected a soda quantity but didnt select a soda</p>
+                        </div>
+                        <div id="soda-checked-warning" class="warning-message">
+                            <p>Sodas: You selected a soda but didn't select a quantity</p>
+                        </div>
                     </div>
                     <div id="wing-selection">
                         <fieldset>
                             <legend>Wings:</legend>
                             <div>
-                                <label for="wing-count">Quantity: </label>
+                                <label for="wing-count" class="form-label">Quantity: </label>
                                 <input
                                     type="number"
                                     class="number-select"
@@ -142,17 +148,30 @@
                                 </select>
                             </div>
                         </fieldset>
+                        <div id="wing-warning" class="warning-message">
+                            <p>Wings: You selected a sauce but didnt select a quantity</p>
+                        </div>
                     </div>
                     <div id="order-string-input">
                         <label class="form-label" for="order-name-field">Name</label>
                         <input type="text" id="order-name-field" required />
+                        <div id="name-warning" class="warning-message">
+                            <p>Name: Must not be empty and only contain letters and spaces</p>
+                        </div>
 
                         <label class="form-label" for="order-phone-field">Phone Number</label>
                         <input type="text" id="order-phone-field" required />
+                        <div id="phone-number-warning" class="warning-message">
+                            <p>
+                                Phone Number: Must not be empty, only contain numbers, and be of the format ###-###-####
+                            </p>
+                        </div>
+
+                        <label class="form-label" for="discount-code-field">Discount Code</label>
+                        <input type="text" id="discount-code-field" />
                     </div>
-                    <div id="order-warning">
-                        <h4>Warning there is a problem with these fields:</h4>
-                        <ul id="order-warning-list"></ul>
+                    <div id="order-general-warning" class="warning-message">
+                        <p>You must fix the form warnings in order to complete your order</p>
                     </div>
                     <div class="button-container">
                         <button id="order-submit-button" type="submit"><i class="fa fa-send-o"></i> Place Order</button>

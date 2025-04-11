@@ -17,22 +17,24 @@
             <a href="pages/order.html">Order Page</a>
         </header>
         <main>
-            <h2>About Us</h2>
-            <div class="content-container">
-                <p>
-                    We are Abattis Pizza and Italian owned and inspired pizza shop located in Kingston Ontario. Our
-                    mission is to provide a high class dining exprience with very friendly prices. If you are looking
-                    for the best pizza in town look no further because it is here!
-                </p>
-                <p>
-                    We are open early and close late and are always ready to take your order. So whether you are craving
-                    a late night snack, an early morning treat, or any meal of the day we've got you covered. Please
-                    stop in at any time!
-                </p>
+            <h2>We are Abattis!</h2>
+            <div class="flex-container">
+                <img src="images/abattisstorefront.jpg" alt="Abattis Pizza storefront" />
+                <div class="flex-container-content">
+                    <p>
+                        We are Abattis Pizza and Italian owned and inspired pizza shop located in Kingston Ontario. Our
+                        mission is to provide a high class dining exprience with very friendly prices. If you are
+                        looking for the best pizza in town look no further because it is here!
+                    </p>
+                    <p>
+                        We are open early and close late and are always ready to take your order. So whether you are
+                        craving a late night snack, an early morning treat, or any meal of the day we've got you
+                        covered. Please stop in at any time!
+                    </p>
+                </div>
             </div>
             <h2>Try Our Large Pepperoni Special!</h2>
             <div class="advertisement-container">
-                <img src="images/pizza.jpg" alt="A Peperroni Pizza" />
                 <div class="advertisement-content">
                     <h3>Price: $15.99</h3>
                     <h4>This selection comes with:</h4>
@@ -47,6 +49,7 @@
                         gathering at home. Make the right choice and order yours now!
                     </p>
                 </div>
+                <img src="images/pizza.jpg" alt="A Peperroni Pizza" />
             </div>
 
             <h2>Reviews</h2>
@@ -169,16 +172,21 @@
                     <div id="game-info-container">
                         <h2>Matching Game!</h2>
                         <div id="game-info-section">
-                            <p>
-                                Oh no! It looks like our menu is all jumbled up! Match the tiles of our different menu
-                                items. If you match them all correctly in 45 seconds we will give you a discount code on
-                                your next order! (Discount codes can only be used once and are not applicable to
-                                multiple orders)
-                            </p>
-                            <h3>Time Remaining: <span id="game-timer">45</span></h3>
+                            <div id="game-instructions">
+                                <p>
+                                    Oh no! It looks like our menu is all jumbled up! Match the tiles of our different
+                                    menu items to help us sort things out! If you match them all correctly in 45 seconds
+                                    we will give you a discount code on your next order!
+                                </p>
+                            </div>
+
+                            <h3>Time Remaining: <span id="game-timer">45s</span></h3>
                             <div id="game-won-section">
                                 <h4>Congrats You Win!</h4>
                                 <h4>Discount Code: ABATTIS90210</h4>
+                                <h5>
+                                    (Discount codes can only be used once and are not applicable to multiple orders)
+                                </h5>
                             </div>
                         </div>
                     </div>

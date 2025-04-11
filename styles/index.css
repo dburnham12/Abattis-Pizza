@@ -15,7 +15,6 @@ Assignment 3
     height: auto;
     width: 40%;
     object-fit: cover;
-    border-radius: 1rem 0 0 1rem;
 }
 
 .advertisement-content {
@@ -34,6 +33,22 @@ Assignment 3
 
 .content-container h4 span {
     font-weight: normal;
+}
+
+.flex-container {
+    display: flex;
+    background-color: var(--lightorange);
+    margin-bottom: 1rem;
+}
+
+.flex-container img {
+    height: auto;
+    width: 40%;
+    object-fit: cover;
+}
+
+.flex-container-content {
+    padding: 1rem;
 }
 
 .review-container {
@@ -100,6 +115,7 @@ table {
 
 #game-section {
     display: flex;
+    align-items: flex-start;
 }
 
 #game-info-container {
@@ -148,6 +164,12 @@ table {
 }
 
 /* Media Queries */
+@media only screen and (max-width: 900px) {
+    #game-section {
+        flex-direction: column;
+    }
+}
+
 @media only screen and (max-width: 700px) {
     .advertisement-container {
         flex-direction: column;
