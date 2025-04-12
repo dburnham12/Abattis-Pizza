@@ -5,26 +5,34 @@ Assignment 3
 */
 
 /* Index Page Specfic Styles */
-.advertisement-container {
-    display: flex;
-    background-color: var(--lightorange);
-    margin-bottom: 1rem;
-}
-
-.advertisement-container img {
-    height: auto;
-    width: 40%;
+#hero-image {
+    width: 100%;
+    height: 80vh;
     object-fit: cover;
 }
 
-.advertisement-content {
-    padding: 0 1rem;
+#hero-container {
+    position: relative;
+}
+
+#hero-overlay {
+    background-color: var(--lightorange);
+    padding: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--orange);
+    text-align: center;
+}
+
+#hero-overlay h4 {
+    margin: 0.5rem 0;
 }
 
 .content-container {
     background-color: var(--lightorange);
     padding: 1rem;
-    margin-bottom: 1rem;
 }
 
 .content-container h4 {
@@ -38,7 +46,6 @@ Assignment 3
 .flex-container {
     display: flex;
     background-color: var(--lightorange);
-    margin-bottom: 1rem;
 }
 
 .flex-container img {
@@ -141,12 +148,14 @@ table {
 #game-grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: auto;
 }
 
 .game-tile {
-    height: 125px;
     width: 125px;
+    height: 125px;
     object-fit: cover;
     border: 1px solid black;
 }
@@ -167,16 +176,59 @@ table {
 @media only screen and (max-width: 900px) {
     #game-section {
         flex-direction: column;
+        align-items: center;
+    }
+
+    #game-grid {
+        margin-bottom: 1rem;
+    }
+
+    .review-container {
+        flex-direction: column;
+    }
+
+    .review-profile-info {
+        border-right: none;
+        border-bottom: 2px solid black;
+        padding: 0 0 1rem 0;
     }
 }
 
 @media only screen and (max-width: 700px) {
-    .advertisement-container {
+    .flex-container {
         flex-direction: column;
     }
 
-    .advertisement-container img {
+    .flex-container img {
         width: 100%;
         height: 300px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .game-tile {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .game-tile {
+        height: 85px;
+        width: 85px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .game-tile {
+        height: 75px;
+        width: 75px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .game-tile {
+        height: 70px;
+        width: 70px;
     }
 }
