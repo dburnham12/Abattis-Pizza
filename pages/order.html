@@ -157,7 +157,7 @@
                             <label class="form-label" for="order-name-field">Name</label>
                             <input type="text" id="order-name-field" required />
                             <div id="name-warning" class="warning-message">
-                                <p>Name: Must not be empty and only contain letters and spaces</p>
+                                <p>Name: Must be 5 characters long and only contain letters and spaces</p>
                             </div>
 
                             <label class="form-label" for="order-phone-field">Phone Number</label>
@@ -197,11 +197,11 @@
                                         </p>
                                         <input
                                             type="checkbox"
-                                            id="upsell-pepperoni"
+                                            id="upsell-toppings"
                                             name="upsell-toppings"
-                                            value="pepperoni"
+                                            value="upsell-toppings"
                                         />
-                                        <label for="upsell-pepperoni">Yes Please!</label>
+                                        <label for="upsell-toppings">Yes Please!</label>
                                     </div>
                                 </div>
                                 <div id="upsell-add-soda" class="upsell-section">
@@ -211,7 +211,12 @@
                                             You haven't selected any drinks would you like to add 2 cans of Coca-Cola to
                                             your order?
                                         </p>
-                                        <input type="checkbox" id="upsell-soda" name="upsell-soda" value="coke" />
+                                        <input
+                                            type="checkbox"
+                                            id="upsell-soda"
+                                            name="upsell-soda"
+                                            value="upsell-soda"
+                                        />
                                         <label for="upsell-soda">Yes Please!</label>
                                     </div>
                                 </div>
@@ -226,13 +231,30 @@
                                             type="checkbox"
                                             id="upsell-wings"
                                             name="upsell-wings"
-                                            value="honey-garlic"
+                                            value="upsell-wings"
                                         />
                                         <label for="upsell-wings">Yes Please!</label>
                                     </div>
                                 </div>
+                                <div id="upsell-add-pizza" class="upsell-section">
+                                    <img src="../images/pizza.jpg" alt="A large pepperoni pizza" />
+                                    <div class="upsell-section-text">
+                                        <p>
+                                            Well we see your order is great, you selected alot of options, but why not
+                                            double down? How about a second pizza?
+                                        </p>
+                                        <input
+                                            type="checkbox"
+                                            id="upsell-pizza"
+                                            name="upsell-pizza"
+                                            value="upsell-pizza"
+                                        />
+                                        <label for="upsell-pizza">Yes Please!</label>
+                                    </div>
+                                </div>
                                 <div class="button-container">
                                     <button type="submit"><i class="fa fa-send-o"></i> Place Order</button>
+                                    <button id="back-to-order-button">Return To Order</button>
                                 </div>
                             </div>
                         </div>

@@ -1,3 +1,9 @@
+/* 
+Dylan Burnham
+COMP 205
+Assignment 3
+*/
+
 let orderAccordianButton = document.getElementById("review-accordian-button");
 let reviewAccordian = document.getElementById("review-accordian");
 
@@ -16,6 +22,7 @@ let gameSeconds = 45;
 let timer;
 let reloadGame = false;
 
+// Event listener to handle the accordian for reviews
 orderAccordianButton.addEventListener("click", () => {
     if (reviewAccordian.style.maxHeight) {
         reviewAccordian.style.maxHeight = null;
@@ -26,7 +33,8 @@ orderAccordianButton.addEventListener("click", () => {
     }
 });
 
-gameStartButton.addEventListener("click", (event) => {
+// Event listener for the game start/retry button
+gameStartButton.addEventListener("click", () => {
     gameStartOverlay.style.display = "none";
 
     let gameBoardSetup = [
@@ -75,6 +83,7 @@ gameStartButton.addEventListener("click", (event) => {
     }, 1000);
 });
 
+// Event listeners applied to each tile on the game grid
 for (let i = 0; i < gameTiles.length; i++) {
     gameTiles[i].addEventListener("click", () => {
         if (canClick && !gameBoardInfo[i].found) {
