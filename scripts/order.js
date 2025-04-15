@@ -56,6 +56,10 @@ pizzaSelect.addEventListener("change", () => {
         buildMenu.style.display = "block";
     } else {
         buildMenu.style.display = "none";
+        // Zero out the toppings so that they wont be preselected when swapping back
+        toppingCheckBoxes.forEach((checkbox) => {
+            checkbox.checked = false;
+        });
     }
 });
 

@@ -4,9 +4,17 @@ COMP 205
 Assignment 3
 */
 
+// Accordian
 let orderAccordianButton = document.getElementById("review-accordian-button");
 let reviewAccordian = document.getElementById("review-accordian");
 
+// Scroll Popup
+let reviews = document.getElementById("reviews");
+let orderNowPopup = document.getElementById("order-popup");
+
+let scrolledPastReviews = false;
+
+// Tile Matching game
 let gameStartButton = document.getElementById("game-start-button");
 let gameStartOverlay = document.getElementById("game-start-overlay");
 let gameTiles = document.getElementsByClassName("game-tile");
@@ -30,6 +38,17 @@ orderAccordianButton.addEventListener("click", () => {
     } else {
         reviewAccordian.style.maxHeight = reviewAccordian.scrollHeight + "px";
         orderAccordianButton.innerHTML = "Show Less";
+    }
+});
+
+// Event listener that checks if we have scrolled past the review secion to display a popup
+window.addEventListener("scroll", function () {
+    if (window.scrollY > reviews.offsetTop + reviews.offsetHeight && !scrolledPastReviews) {
+        scrolledPastReviews = true;
+        orderNowPopup.style.bottom = "1rem";
+        setTimeout(() => {
+            orderNowPopup.style.bottom = "-20rem";
+        }, 4000);
     }
 });
 

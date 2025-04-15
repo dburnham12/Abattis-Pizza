@@ -172,6 +172,26 @@ table {
     justify-content: center;
 }
 
+#order-popup {
+    position: fixed;
+    bottom: -20rem;
+    background-color: var(--lightorange);
+    border: 5px solid black;
+    border-radius: 1rem;
+    width: 20rem;
+    text-align: center;
+    padding: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1000;
+    transition: bottom 0.5s ease-in-out;
+}
+
+#order-popup h4 {
+    margin: 0.25rem 0;
+    padding: 0;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 900px) {
     #game-section {
