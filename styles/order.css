@@ -102,8 +102,8 @@ fieldset {
 }
 
 .warning-message {
-    background-color: lightyellow;
-    border: 1px solid yellow;
+    background-color: var(--lightyellow);
+    border: 1px solid var(--yellow);
     border-radius: 1rem;
     padding: 0 1rem;
     display: none;
@@ -113,12 +113,6 @@ fieldset {
 #soda-quantity-warning,
 #wing-warning {
     margin-top: 1rem;
-}
-
-#name-warning,
-#phone-number-warning {
-    display: block;
-    margin-bottom: 0.5rem;
 }
 
 #order-general-warning {
